@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'api' => [
+            'driver' => 'jwt', // By default is token, please change it by jwt
+            'provider' => 'users',
+        ],
     ],
 
     /*
