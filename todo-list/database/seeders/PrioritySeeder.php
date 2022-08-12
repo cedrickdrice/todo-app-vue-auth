@@ -27,6 +27,9 @@ class PrioritySeeder extends Seeder
             [
                 'priority_name' => 'Low',
             ],
+            [
+                'priority_name' => 'No Priority',
+            ],
         ];
 
         foreach ($aPriorities as $aPriority) {
