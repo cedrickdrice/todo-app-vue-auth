@@ -11,6 +11,8 @@ class ModelTask extends Model
 
     protected $table = 'task';
 
+    protected $with = ['priority', 'status'];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -38,6 +40,6 @@ class ModelTask extends Model
 
     public function priority()
     {
-        return $this->belongsTo(ModelTaskStatus::class, 'task_priority_id');
+        return $this->belongsTo(ModelTaskPriority::class, 'task_priority_id');
     }
 }

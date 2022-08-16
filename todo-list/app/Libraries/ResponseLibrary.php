@@ -57,8 +57,8 @@ class ResponseLibrary extends ResponseConstants
      * Return Data not found response
      * @return JsonResponse
      */
-    public static function noDataResponse(): JsonResponse
+    public static function noDataResponse($mMessage = self::NO_DATA): JsonResponse
     {
-        return self::errorResponse(self::NO_DATA, self::NOT_FOUND);
+        return self::errorResponse($mMessage, self::NOT_FOUND);
     }
 }

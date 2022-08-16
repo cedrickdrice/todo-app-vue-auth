@@ -5,15 +5,7 @@ import Auth from './components/auth/Auth'
 import Todo from './components/todo/Todo'
 import $auth from './Auth.js';
 
-const routes = [,
-    {
-        path: '/',
-        name: 'Home',
-        component: Todo,
-        meta: {
-            requiresAuth: true
-        }
-    },
+const routes = [
     {
         path: '/login',
         name: 'Login',
@@ -21,6 +13,14 @@ const routes = [,
         meta: {
             requiresAuth: false,
             onlyGuest: true
+        }
+    },
+    {
+        path: '/',
+        name: 'Home',
+        component: Todo,
+        meta: {
+            requiresAuth: true
         }
     }
 ];
@@ -30,21 +30,17 @@ const router = createRouter({
     routes,
 });
 
-router.beforeEach((to, from, next) => {
-    if(to.matched.some(record => record.meta.requiresAuth)) {
-        if ($auth.check() === true) {
-            next()
-            return
+router.beforeEach((to, from) => {
+    if (to.meta.requiresAuth === true && $auth.check() === false) {
+        return {
+            path: '/login'
         }
     }
-    if(to.matched.some(record => record.meta.onlyGuest)) {
-        if ($auth.check() === true) {
-            next('/')
-            return
+    if(to.meta.onlyGuest === true && $auth.check() === true) {
+        return {
+            path: from.fullPath ?? '/'
         }
     }
-
-    next('/login')
 })
 
 export default router

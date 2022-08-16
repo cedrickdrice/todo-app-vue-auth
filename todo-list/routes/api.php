@@ -29,12 +29,12 @@ Route::group(['namespace' => 'Api'], function () {
     });
 
     Route::middleware('auth:api')->group(function () {
-        Route::group(['prefix' => 'task'], function () {
-            Route::get('{id}',          [TaskManagementController::class, 'getTaskDetail']);
-            Route::post('/',            [TaskManagementController::class, 'createTask']);
-            Route::put('{id}',          [TaskManagementController::class, 'updateTask']);
-            Route::get('list',          [TaskManagementController::class, 'getTaskList']);
-            Route::delete('delete',     [TaskManagementController::class, 'deleteTask']);
+        Route::group(['prefix' => 'task', 'as'=>'task.'], function () {
+            Route::get('list',          [TaskManagementController::class, 'getTaskList'])->name('list');
+            Route::get('{task_id}',          [TaskManagementController::class, 'getTaskDetail'])->name('get');
+            Route::post('/',            [TaskManagementController::class, 'createTask'])->name('create');
+            Route::put('{task_id}',          [TaskManagementController::class, 'updateTask'])->name('update');
+            Route::delete('{task_id}',     [TaskManagementController::class, 'deleteTask'])->name('delete');
         });
     });
 });
