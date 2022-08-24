@@ -6,6 +6,8 @@
       <sourceFolder url="file://$MODULE_DIR$/todo-list/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/todo-list/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/todo-list/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/asm89/stack-cors" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/composer" />
@@ -31,6 +33,8 @@
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/laravel/sanctum" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/laravel/serializable-closure" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/laravel/ui" />
+      <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/lcobucci/jwt" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/league/commonmark" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/league/config" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/league/flysystem" />
@@ -38,6 +42,7 @@
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/namshi/jose" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/nette/schema" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/nette/utils" />
@@ -114,6 +119,7 @@
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/tymon/jwt-auth" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/todo-list/vendor/webmozart/assert" />

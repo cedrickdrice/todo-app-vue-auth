@@ -18,6 +18,15 @@ const Auth = {
         let objectToken = JSON. parse(sAccessToken);
         return (new Date(objectToken.expires_in * 1000) > new Date());
     },
+    getRequestHeader() {
+        let sAccessToken = localStorage.getItem('token');
+        let objectToken = JSON. parse(sAccessToken);
+        return {
+            headers: {
+                'Authorization' : `Bearer ${objectToken.access_token}`
+            }
+        };
+    },
     logout () {
         // window.localStorage.clear();
         window.localStorage.removeItem('token');

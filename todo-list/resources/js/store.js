@@ -1,3 +1,4 @@
+import $auth from './Auth.js';
 const oLoginModule = {
     namespaced: true,
     state: {
@@ -43,8 +44,38 @@ const oLoginModule = {
     }
 }
 
+const oTaskModule = {
+    namespaced: true,
+    state: {
+        urls : {
+            apiGetTodoList : '/api/task/list'
+        },
+        taskList : []
+    },
+    mutations: {
+        setTodoList(state, oTodoList) {
+            state.taskList = oTodoList;
+        },
+    },
+    actions: {
+        fetchTodoList({state, commit}) {
+            return new Promise((resolve, reject) => {
+                axios.get(state.urls.apiGetTodoList, $auth.getRequestHeader())
+                    .then(oResponse => {
+                        commit('setTodoList', oResponse.data.data.tasks);
+                        resolve();
+                    })
+                    .catch(function () {
+                        reject();
+                    });
+            });
+        },
+    }
+}
+
 export default {
     modules: {
-        loginModule: oLoginModule
+        loginModule: oLoginModule,
+        taskModule: oTaskModule,
     }
 }
